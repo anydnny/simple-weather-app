@@ -1,0 +1,33 @@
+.weather__form{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    z-index: 1
+    ;
+}
+.weather__input{
+    border: none;
+    border-bottom: .1rem solid black;
+    outline: none;
+
+    height: 4rem;
+    min-width: 2rem;
+
+    margin-right: 1rem;
+    font-size: 3rem;
+}
+
+.weather__btn{
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    outline: none;
+    border: .1rem solid black;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.weather__btn img {
+    margin: auto;
+    width: 80%;
+    height: 80%;
+}
