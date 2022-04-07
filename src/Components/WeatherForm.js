@@ -1,6 +1,7 @@
 import React from "react";
 
 import "../CSS/WeatherForm.css";
+
 export default function WeatherForm (props) {
 
     return (

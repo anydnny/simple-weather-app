@@ -62,7 +62,7 @@ export default function WeatherApp(){
     },[coord])
     
     if(!found){
-            move[0].style.top = "200%";
+         move[0].style.top = "200%";
     }
 
 
@@ -75,12 +75,28 @@ export default function WeatherApp(){
         }
     }, [city])
 
-   
+   useEffect(()=>{
+    const weather__input = document.querySelector(".weather__input");
+
+    if(loader){
+        weather__input.classList.add("input-load")
+        console.log("add")
+    } else {
+        const timerId = setTimeout(() => {
+            weather__input.classList.remove("input-load");
+            console.log("remove")
+          }, 1000)
+        return () => {
+            clearTimeout(timerId);
+            console.log("clean")
+        }
+    }
+   }, [loader])
     
     return(
         <div className="weather__app"> 
-          <WeatherForm onFormSubmit = {handleFormSubmit}  inputRef={inputRef} city = {city} onCityChange = {handleCityChange} /> 
-          <WeatherStatus loader = {loader} found = {found}/>
+          <WeatherForm onFormSubmit = {handleFormSubmit}  inputRef={inputRef} city = {city} onCityChange = {handleCityChange} loader={loader}/> 
+          <WeatherStatus  found = {found}/>
           <WeatherCard found = {found} result = {result}/>
         </div>
     )
