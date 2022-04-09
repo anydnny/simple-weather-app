@@ -13,5 +13,17 @@ weather_not-found */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: .3s ease-in;
+    transition: .5s cubic-bezier(0.52, -0.18, 0.36, 1.06);
+}
+
+/* @keyframes move {
+    0%{
+        top: 50%;
+    }
+    100%{
+        top: 200%;
+    }
+} */
+.move{ 
+    top: 200%;
 }

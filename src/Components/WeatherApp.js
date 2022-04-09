@@ -13,9 +13,9 @@ export default function WeatherApp(){
     const [coord, setCoord] = useState();
     const [found, setFound] = useState(true);
     const [loader, setLoader] = useState(false);
-
+    const [connect, setConnect] = useState(true);
     const api_key = "6dfef43cbe7ca052107e6c14992fa2ee"; 
-    const move = document.getElementsByClassName("weather__status");
+    
 
     const inputRef = useRef();
     useEffect(()=>{
@@ -28,6 +28,16 @@ export default function WeatherApp(){
 
     function handleFormSubmit(e){
         e.preventDefault();
+
+        (async () => {
+            try{
+                await fetch('https://jsonplaceholder.typicode.com/todos/1');
+                setConnect(true)
+            }
+            catch{
+                setConnect(false);
+            }
+        }) (); 
 
         (async ()=>{
             try{
@@ -47,7 +57,7 @@ export default function WeatherApp(){
             finally{
                 setLoader(false)
             }
-        }) ()
+        }) ();
     }
 
     useEffect(()=>{
@@ -61,17 +71,25 @@ export default function WeatherApp(){
        
     },[coord])
     
-    if(!found){
-         move[0].style.top = "200%";
-    }
 
+    useEffect(()=>{
+        if(!found){
+            document.querySelector(".weather__status").style.top = "200%";
+        }
+    },[found])
 
     useEffect(()=>{
         if(!city){
             setResult();
-            setFound(true);
-            move[0].style.top = "50%";
-            
+            if(!found){
+                document.querySelector(".weather__status").style.top = "50%";
+            }
+            const timer = setTimeout(()=>{
+                setFound(true);
+            }, 1000)
+           return (
+               clearTimeout(timer)
+           )
         }
     }, [city])
 
@@ -80,15 +98,12 @@ export default function WeatherApp(){
 
     if(loader){
         weather__input.classList.add("input-load")
-        console.log("add")
     } else {
         const timerId = setTimeout(() => {
             weather__input.classList.remove("input-load");
-            console.log("remove")
           }, 1000)
         return () => {
             clearTimeout(timerId);
-            console.log("clean")
         }
     }
    }, [loader])
@@ -96,7 +111,7 @@ export default function WeatherApp(){
     return(
         <div className="weather__app"> 
           <WeatherForm onFormSubmit = {handleFormSubmit}  inputRef={inputRef} city = {city} onCityChange = {handleCityChange} loader={loader}/> 
-          <WeatherStatus  found = {found}/>
+          <WeatherStatus  found = {found} connect={connect} />
           <WeatherCard found = {found} result = {result}/>
         </div>
     )

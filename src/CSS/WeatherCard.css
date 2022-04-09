@@ -6,12 +6,15 @@
     position: absolute;
     width: 100%;
     z-index: -1;
-    top: 200%;
+    top: 150%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: .8s ease-in;
 }
 
+.weather__card_down{
+    top: 200%;
+}
 
 .weather__temp span{
     font-size: 1.8rem;

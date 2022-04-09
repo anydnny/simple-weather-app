@@ -38,6 +38,10 @@
     font-size: 3rem;
     transition: .2s ease-in-out;
 }
+.weather__input::placeholder {
+    color: black;
+    opacity: 0.3;
+}
 .input-load{
         animation: load 1s ease-in-out infinite;
  }
