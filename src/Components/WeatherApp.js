@@ -75,12 +75,12 @@ export default function WeatherApp(){
     useEffect(()=>{
         if(!found){
             document.querySelector(".weather__status").style.top = "200%";
+            setResult()
         }
     },[found])
 
     useEffect(()=>{
         if(!city){
-            setResult();
             if(!found){
                 document.querySelector(".weather__status").style.top = "50%";
             }
@@ -92,6 +92,31 @@ export default function WeatherApp(){
            )
         }
     }, [city])
+
+    useEffect(()=>{
+        if(!city && result){
+            document.querySelector(".weather__card").style.top = "50%"
+            const timer = setTimeout(()=>{
+                setResult();
+            },800)
+            return () => {
+                clearTimeout(timer)
+            }
+        }
+    },[city])
+
+    useEffect(()=>{
+        if(result){
+            console.log("poyavilas")
+            const timer = setTimeout(()=>{
+                 document.querySelector(".weather__card").style.top = "200%";
+            },800);
+            return () => {
+                clearTimeout(timer)
+            }
+        }
+
+    }, [result])
 
    useEffect(()=>{
     const weather__input = document.querySelector(".weather__input");
