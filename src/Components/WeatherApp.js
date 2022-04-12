@@ -45,7 +45,7 @@ export default function WeatherApp(){
             try{
                 setLoader(true);
                 setFound(true);
-                const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city.toLowerCase()}&limit=1&appid=${api_key}`)
+                const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city.toLowerCase()}&limit=1&appid=${api_key}`)
                 const data = await response.json();
                 if(data){
                     setFound(true);
