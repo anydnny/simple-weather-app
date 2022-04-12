@@ -27,7 +27,9 @@ export default function WeatherApp(){
     }
 
     function handleFormSubmit(e){
-        e.preventDefault();
+        if(e){
+            e.preventDefault();
+        }
 
         (async () => {
             try{
@@ -106,8 +108,17 @@ export default function WeatherApp(){
     },[city])
 
     useEffect(()=>{
+        if(city){
+            const timer = setTimeout(()=>{
+                handleFormSubmit()
+             }, 2500)
+             return ()=>{
+                 clearTimeout(timer)
+             };
+        }
+    },[city])
+    useEffect(()=>{
         if(result){
-            console.log("poyavilas")
             const timer = setTimeout(()=>{
                  document.querySelector(".weather__card").style.top = "200%";
             },800);

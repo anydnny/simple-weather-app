@@ -60,3 +60,17 @@
     width: 80%;
     height: 80%;
 }
+
+@media screen and (max-width: 360px){
+    .weather__form{
+        justify-content: center;
+    }
+    .weather__input{
+       width: 90%;
+       font-size: 2.2rem;
+       margin-right: 2.5rem;
+    }
+    .weather__btn{
+        margin: 0
+    }
+}
