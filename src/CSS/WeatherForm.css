@@ -30,10 +30,11 @@
 
     border: none;
     border-bottom: .2rem solid black;
+    border-radius: 0;
     outline: none;
 
     height: 4rem;
-    width: 90%;
+    width: 85%;
     min-width: 2rem;
 
     font-size: 3rem;

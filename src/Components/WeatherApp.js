@@ -9,7 +9,7 @@ import "../CSS/WeatherApp.css";
 export default function WeatherApp(){
 
     const [city, setCity] = useState("");
-    const [result, setResult] = useState()
+    const [result, setResult] = useState();
     const [coord, setCoord] = useState();
     const [found, setFound] = useState(true);
     const [loader, setLoader] = useState(false);
