@@ -1,8 +1,7 @@
 .weather__form{
     background-color: rgb(255, 255, 255);
-    display: flex;
+    position: relative;
     z-index: 1;
-    align-items: center;
 }
 
 @keyframes load {
@@ -27,14 +26,16 @@
     }
 }
 .weather__input{
+    -webkit-appearance: none;
+
     border: none;
     border-bottom: .2rem solid black;
     outline: none;
 
     height: 4rem;
+    width: 90%;
     min-width: 2rem;
 
-    margin-right: 1rem;
     font-size: 3rem;
     transition: .2s ease-in-out;
 }
@@ -43,16 +44,24 @@
     opacity: 0.3;
 }
 .input-load{
-        animation: load 1s ease-in-out infinite;
+     animation: load 1s ease-in-out infinite;
  }
 .weather__btn{
+    -webkit-appearance: none;
+
     display: inline-block;
+    position: absolute;
+    top: calc(50% - 1.5rem);
+    left: calc(70% - 1.5rem);
+    z-index: -1;
     height: 3rem;
     width: 3rem;
     outline: none;
     border: .1rem solid black;
     background-color: #fff;
     cursor: pointer;
+
+    transition: .3s ease;
 }
 
 .weather__btn img {
@@ -62,15 +71,9 @@
 }
 
 @media screen and (max-width: 360px){
-    .weather__form{
-        justify-content: center;
-    }
     .weather__input{
-       width: 90%;
        font-size: 2.2rem;
        margin-right: 2.5rem;
     }
-    .weather__btn{
-        margin: 0
-    }
 }
+

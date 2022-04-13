@@ -96,6 +96,15 @@ export default function WeatherApp(){
     }, [city])
 
     useEffect(()=>{
+        const btn = document.querySelector(".weather__btn");
+        if(city){
+            btn.style.left = "calc(100% - 1.5rem)"
+        } else {
+            btn.style.left = "calc(70% - 1.5rem)"
+        }
+    }, [city])
+
+    useEffect(()=>{
         if(!city && result){
             document.querySelector(".weather__card").style.top = "50%"
             const timer = setTimeout(()=>{
@@ -111,7 +120,7 @@ export default function WeatherApp(){
         if(city){
             const timer = setTimeout(()=>{
                 handleFormSubmit()
-             }, 2500)
+             }, 1500)
              return ()=>{
                  clearTimeout(timer)
              };
