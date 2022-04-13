@@ -61,7 +61,13 @@ export default function WeatherApp(){
             }
         }) ();
     }
-
+    useEffect(()=>{
+        if(result){
+            document.title = `${city}: ${result.temp}℃`
+        } else {
+            document.title = "simple weather app"
+        }
+    },[result])
     useEffect(()=>{
         if (coord) {
             (async () => {
@@ -73,7 +79,6 @@ export default function WeatherApp(){
        
     },[coord])
     
-
     useEffect(()=>{
         if(!found){
             document.querySelector(".weather__status").style.top = "200%";
