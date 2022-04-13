@@ -103,7 +103,7 @@ export default function WeatherApp(){
     useEffect(()=>{
         const btn = document.querySelector(".weather__btn");
         if(city){
-            btn.style.left = "calc(100% - 1.5rem)"
+            btn.style.left = "calc(95% - 1.5rem)"
         } else {
             btn.style.left = "calc(70% - 1.5rem)"
         }

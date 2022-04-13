@@ -2,6 +2,8 @@
     background-color: rgb(255, 255, 255);
     position: relative;
     z-index: 1;
+    width: 90%;
+    margin: auto;
 }
 
 @keyframes load {
@@ -26,8 +28,6 @@
     }
 }
 .weather__input{
-    -webkit-appearance: none;
-
     border: none;
     border-bottom: .2rem solid black;
     border-radius: 0;
