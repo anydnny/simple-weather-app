@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/simple-weather-app/static/css/main.d7151472.css",
-    "main.js": "/simple-weather-app/static/js/main.7433ec0e.js",
+    "main.css": "/simple-weather-app/static/css/main.c406e06d.css",
+    "main.js": "/simple-weather-app/static/js/main.73f3cb16.js",
     "index.html": "/simple-weather-app/index.html",
-    "main.d7151472.css.map": "/simple-weather-app/static/css/main.d7151472.css.map",
-    "main.7433ec0e.js.map": "/simple-weather-app/static/js/main.7433ec0e.js.map"
+    "main.c406e06d.css.map": "/simple-weather-app/static/css/main.c406e06d.css.map",
+    "main.73f3cb16.js.map": "/simple-weather-app/static/js/main.73f3cb16.js.map"
   },
   "entrypoints": [
-    "static/css/main.d7151472.css",
-    "static/js/main.7433ec0e.js"
+    "static/css/main.c406e06d.css",
+    "static/js/main.73f3cb16.js"
   ]
 }
